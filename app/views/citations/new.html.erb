@@ -1,0 +1,10 @@
+<h1>New quotes</h1>
+<%= form_for :citation, url: citations_path do |f| %>
+<p>
+  <%= f.label :Citation %><br>
+  <%= f.text_area :text %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

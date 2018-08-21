@@ -1,0 +1,14 @@
+</p><%= link_to 'Add new quote', new_citation_path %></p>
+<p>
+  <table>
+    <tr>
+      <th>Added at</th>
+      <th>Quotes</th>
+    </tr>
+    <% @citations.each do |citation| %>
+      <tr></p>
+        <td><%= citation.created_at.strftime('%d %B %Y') %></td>
+        <td><%= citation.text %></td>
+      </tr>
+    <% end %>
+  </table>
