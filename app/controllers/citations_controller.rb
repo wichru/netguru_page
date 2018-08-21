@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CitationsController < ApplicationController
   def index
     @citations = Citation.all.order(created_at: :desc).paginate(

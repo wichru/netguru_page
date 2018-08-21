@@ -3,6 +3,6 @@
 10.times do
   Citation.create(
     text: 'However beautiful the strategy you should occasionally look at the results')
-  end
+end
 
 10.times { Citation.create(text: 'Make it as simple as possible, but not simpler.') }
