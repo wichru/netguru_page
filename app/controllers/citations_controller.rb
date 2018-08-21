@@ -1,7 +1,7 @@
 class CitationsController < ApplicationController
   def index
     @citations = Citation.all.order(created_at: :desc).paginate(
-      page:  params[:page], per_page: 12
+      page: params[:page], per_page: 12
     )
   end
 
@@ -15,13 +15,13 @@ class CitationsController < ApplicationController
     if @citation.save
       redirect_to '/'
     else
-      render 'new'
+      render :new
     end
   end
 
   private
 
   def citation_params
-    citation_params = params.require(:citation).permit(:text)
+    params.require(:citation).permit(:text)
   end
 end
