@@ -1,8 +1,8 @@
 </p><%= link_to 'Add new quote', new_citation_path %></p>
 <p>
-  <table>
+  <table style="width: 60%">
     <tr>
-      <th>Added at</th>
+      <th style="width: 15%">Added at</th>
       <th>Quotes</th>
     </tr>
     <% @citations.each do |citation| %>
@@ -12,3 +12,5 @@
       </tr>
     <% end %>
   </table>
+
+  <p><%= will_paginate @citations %></p>

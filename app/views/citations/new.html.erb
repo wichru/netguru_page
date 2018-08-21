@@ -1,7 +1,21 @@
 <h1>New quotes</h1>
+<%= link_to 'Back', citations_path %>
+
+<% if @citation.errors.any? %>
+  <div>
+    <h2><%= pluralize(@citation.errors.count, 'error') %>
+      prohibited this article begin from saved:</h2>
+    <ul>
+      <% @citation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for :citation, url: citations_path do |f| %>
 <p>
-  <%= f.label :Citation %><br>
+  <%= f.label :Quote %><br>
   <%= f.text_area :text %>
 </p>
 <p>
