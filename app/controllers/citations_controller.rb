@@ -10,19 +10,18 @@ class CitationsController < ApplicationController
   end
 
   def create
-    citation_params = params.require(:citation).permit(:text)
-
     @citation = Citation.new(citation_params)
 
     if @citation.save
-      redirect_to citations_path
+      redirect_to '/'
     else
       render 'new'
     end
   end
 
-  def show
-    @citation = Citation.find(params[:id])
-  end
+  private
 
+  def citation_params
+    citation_params = params.require(:citation).permit(:text)
+  end
 end
