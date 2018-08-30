@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe Auction, :type => :model do
+RSpec.describe Citation, :type => :model do
   it "is valid with valid attributes" do
-    expect(Auction.new).to be_valid
+    expect(Citation.new).to be_valid
   end
 
   it "is not valid without a title"
